@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 
 import './style.css';
-
+/**
+ * Loading class, shows on the screen when there is a request from
+ * graphql API or can be used in any other place
+ */
 class Loading extends Component {
     constructor(props) {
         super(props);

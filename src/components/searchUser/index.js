@@ -1,6 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Search user component - Dumb component
+ * @param {object} param0 - has the value from the smart component
+ *  by default is 'ceaia-tiberiu'
+ * onChange - changes the value in input field
+ * onSubmit - submits the form
+ */
 const SearchUser = ({ value, onChange, onSubmit }) => {
     return (
         <div className="search-user">

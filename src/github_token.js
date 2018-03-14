@@ -1,1 +1,1 @@
-export default 'xxx';
+export default 'xxx'; //replace xxx with your token

@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchUser from './components/searchUser';
 import UserInfo from './components/UserInfo';
+
 class App extends React.Component {
     constructor() {
         super();

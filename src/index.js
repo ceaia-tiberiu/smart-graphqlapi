@@ -11,6 +11,9 @@ import tokenKey from './github_token';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
+/**
+ * Seting up the url for the api with token from github account
+ */
 const httpLink = new HttpLink({
     uri: 'https://api.github.com/graphql',
     headers: {
@@ -18,6 +21,9 @@ const httpLink = new HttpLink({
     },
 });
 
+/**
+ * if there's an error will appear in console
+ */
 const errorLink = onError(({ graphQLErrors, networkError }) => {
     if (graphQLErrors)
         graphQLErrors.map(({ message, locations, path }) =>
@@ -36,6 +42,9 @@ const cache = new InMemoryCache({
     loggerEnabled: true,
 });
 
+/**
+ * initialize the apollo client
+ */
 const client = new ApolloClient({
     link,
     cache,

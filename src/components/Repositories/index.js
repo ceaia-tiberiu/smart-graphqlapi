@@ -1,5 +1,11 @@
 import React from 'react';
 import './style.css';
+
+/**
+ * Dumb component
+ * @param {array} param0 -  array props with the repositoris of the user
+ * It goes on each repository and shows all the informations required
+ */
 const Repositories = ({ repositories }) => {
     return (
         <div>
@@ -16,6 +22,10 @@ const Repositories = ({ repositories }) => {
     );
 };
 
+/**
+ * Dumb component
+ * @param {object} param0 - object props with all the info of a repository
+ */
 const Repository = ({
     id,
     name,

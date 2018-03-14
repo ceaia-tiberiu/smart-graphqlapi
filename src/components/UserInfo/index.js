@@ -5,6 +5,13 @@ import Loading from '../Loading';
 import Repositories from '../Repositories';
 import REPOSITORY_FRAGMENT from './repositoriesFragment';
 
+/**
+ * UserInformation component - Dumb component
+ * @param {object} param0 - get's the data from the graphqlapi,
+ * loading - boolean - if it's true, the call is in progress
+ * error - error message of the call
+ * user - object with all the informations
+ */
 const UserInfo = ({ data: { loading, error, user } }) => {
     if (error) {
         return <div>{error.toString()}</div>;
@@ -12,9 +19,7 @@ const UserInfo = ({ data: { loading, error, user } }) => {
     if (loading && !user) {
         return <Loading isCenter={true} />;
     }
-    if (user) {
-        console.log(user);
-    }
+
     return (
         <div>
             <h1>Name: {user.name}</h1>
@@ -27,6 +32,9 @@ const UserInfo = ({ data: { loading, error, user } }) => {
     );
 };
 
+/**
+ * graphql query for the user and all the info's
+ */
 const USER_INFORMATION = gql`
     query($username: String!) {
         user(login: $username) {
@@ -46,10 +54,11 @@ const USER_INFORMATION = gql`
             }
         }
     }
-
     ${REPOSITORY_FRAGMENT}
 `;
-
+/**
+ * variables of the query and other configurations
+ */
 const USER_INFORMATION_CONFIG = {
     options: ({ user }) => ({
         variables: {
