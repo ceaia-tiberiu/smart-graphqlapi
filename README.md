@@ -5,7 +5,7 @@ It searches an user on the github and shows informations about that specific use
 
 ### What to do first
 
-*   in the file `github_token.js` replace the xxx with your token
+*   in the file `github_token.js` replace the xxx with your token - see [https://developer.github.com/v4/] on how to do that
 *   run `npm install` from your command line
 *   run `npm start` to start the server on http://localhost:3000
 
